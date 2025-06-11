@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var number = Int.random(in: 1...20)
+    @State private var guess = ""
+    @State private var showingAlert = false
+    @State private var numberOfTries = 0
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("Guess the number", text: $guess)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .border(Color.gray)
+                .padding()
+            
+            Button("Submit Guess"){
+            
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.green)
         }
-        .padding()
     }
-}
-
 #Preview {
     ContentView()
 }
